@@ -45,22 +45,27 @@ public class Player : MonoBehaviour
             transform.eulerAngles += new Vector3(0f, 0f, -1f);
             // rotates the cube while it's in the air, like in Geometry Dash
         }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
+        }
 
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-        // Prevents the cube from rotating from collisions.
-    }
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+    //    // Prevents the cube from rotating from collisions
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isInAir = false;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isInAir = true;
-    }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    isInAir = true;
+    //}
 }
