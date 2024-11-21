@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,7 @@ public class PCube : MonoBehaviour
         }
         else
         {
-            //transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             // as a temporary measure, this will straighten up the cube when it lands
             // on the ground. Later, work on alignment of the cube itself as described below.
 
@@ -36,7 +37,30 @@ public class PCube : MonoBehaviour
 
     private void AlignCube()
     {
-        
+        //float test = transform.rotation.eulerAngles.z;
+        //int intValue = (int)Math.Round(floatValue);
+
+        // if cube's rotation is between 0 and -90...
+
+        // if cube's rotation is between -90 and -180...
+
+        // if cube's rotation is between -180 and -270...
+
+        // if cube's rotation is between -270 and -360...
+
+        // the rotation follows as such...
+        // always rotates clockwise, starts at 0. 
+        // decreases down to -180
+        // upon reaching 180, rotation switches to positive 180
+        // rotation continues to decrease from 180 down to 0
+        // sequence repeats.
+
+        /* Therefore
+         * 0 - Top of cube facing upright and normal    ^
+         * -90 - Top of cube facing right               ->
+         * 180 - Top of cube facing downwards           \/
+         * 90 - Top of cube facing left                 <-
+         */
     }
 
     // When the cube returns to the ground, it is intended that it is rotated 
