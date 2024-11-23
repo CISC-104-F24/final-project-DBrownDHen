@@ -40,14 +40,70 @@ public class PCube : MonoBehaviour
         //float test = transform.rotation.eulerAngles.z;
         //int intValue = (int)Math.Round(floatValue);
 
-        // if cube's rotation is between 0 and -90...
-
-        // if cube's rotation is between -90 and -180...
-
-        // if cube's rotation is between -180 and -270...
-
-        // if cube's rotation is between -270 and -360...
-
+        // if cube's rotation is between 45 and -45, align cube to 0 degrees
+        if (transform.rotation.eulerAngles.z >= 45 && transform.rotation.eulerAngles.z < -45)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
+            while (!(transform.rotation.eulerAngles.z == 0))
+            {
+                if (transform.rotation.eulerAngles.z < 0)
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+                }
+                else
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+                }
+            }
+        }
+        // if cube's rotation is between -45 and -135, align cube to -90 degrees
+        else if (transform.rotation.eulerAngles.z >= -45 && transform.rotation.eulerAngles.z < -135)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
+            while (!(transform.rotation.eulerAngles.z == -90))
+            {
+                if (transform.rotation.eulerAngles.z < -90)
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+                }
+                else
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+                }
+            }
+        }
+        // if cube's rotation is between -135 and 135, align cube to 180 degrees
+        else if (transform.rotation.eulerAngles.z >= -135 && transform.rotation.eulerAngles.z < 135)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
+            while (!(transform.rotation.eulerAngles.z == 180))
+            {
+                if (transform.rotation.eulerAngles.z < 180)
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+                }
+                else
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+                }
+            }
+        }
+        // if cube's rotation is between 135 and 45, align cube to 90 degrees
+        else if (transform.rotation.eulerAngles.z >= 135 && transform.rotation.eulerAngles.z < 45)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
+            while (!(transform.rotation.eulerAngles.z == 90))
+            {
+                if (transform.rotation.eulerAngles.z < 90)
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+                }
+                else
+                {
+                    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+                }
+            }
+        }
         // the rotation follows as such...
         // always rotates clockwise, starts at 0. 
         // decreases down to -180
