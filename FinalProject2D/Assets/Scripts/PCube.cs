@@ -19,6 +19,8 @@ public class PCube : MonoBehaviour
     {
         // add rotation acceleration. Rotation accelerates up to -0.5f over the course of a second or something.
 
+        //Debug.Log((float)Math.Round(transform.rotation.eulerAngles.z));
+
         transform.position = CubeHitbox.transform.position;
         if (CubeHitbox.GetComponent<PHitbox>().isInAir)
         {
@@ -37,73 +39,77 @@ public class PCube : MonoBehaviour
 
     private void AlignCube()
     {
+        // This doesnt work at the moment. I plan to fix this.
+        // This will work, I know it.
+
+
         //float test = transform.rotation.eulerAngles.z;
         //int intValue = (int)Math.Round(floatValue);
 
         // if cube's rotation is between 45 and -45, align cube to 0 degrees
-        if (transform.rotation.eulerAngles.z >= 45 && transform.rotation.eulerAngles.z < -45)
-        {
-            transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
-            while (!(transform.rotation.eulerAngles.z == 0))
-            {
-                if (transform.rotation.eulerAngles.z < 0)
-                {
-                    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
-                }
-                else
-                {
-                    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
-                }
-            }
-        }
-        // if cube's rotation is between -45 and -135, align cube to -90 degrees
-        else if (transform.rotation.eulerAngles.z >= -45 && transform.rotation.eulerAngles.z < -135)
-        {
-            transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
-            while (!(transform.rotation.eulerAngles.z == -90))
-            {
-                if (transform.rotation.eulerAngles.z < -90)
-                {
-                    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
-                }
-                else
-                {
-                    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
-                }
-            }
-        }
-        // if cube's rotation is between -135 and 135, align cube to 180 degrees
-        else if (transform.rotation.eulerAngles.z >= -135 && transform.rotation.eulerAngles.z < 135)
-        {
-            transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
-            while (!(transform.rotation.eulerAngles.z == 180))
-            {
-                if (transform.rotation.eulerAngles.z < 180)
-                {
-                    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
-                }
-                else
-                {
-                    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
-                }
-            }
-        }
-        // if cube's rotation is between 135 and 45, align cube to 90 degrees
-        else if (transform.rotation.eulerAngles.z >= 135 && transform.rotation.eulerAngles.z < 45)
-        {
-            transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
-            while (!(transform.rotation.eulerAngles.z == 90))
-            {
-                if (transform.rotation.eulerAngles.z < 90)
-                {
-                    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
-                }
-                else
-                {
-                    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
-                }
-            }
-        }
+        //if (transform.rotation.eulerAngles.z >= 45 && transform.rotation.eulerAngles.z < -45)
+        //{
+        //    transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
+        //    if (transform.rotation.eulerAngles.z != 0)
+        //    {
+        //        if (transform.rotation.eulerAngles.z < 0)
+        //        {
+        //            transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+        //        }
+        //        else
+        //        {
+        //            transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+        //        }
+        //    }
+        //}
+        //// if cube's rotation is between -45 and -135, align cube to -90 degrees
+        //else if (transform.rotation.eulerAngles.z >= -45 && transform.rotation.eulerAngles.z < -135)
+        //{
+        //    transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
+        //    if (!(transform.rotation.eulerAngles.z != -90))
+        //    {
+        //        if (transform.rotation.eulerAngles.z < -90)
+        //        {
+        //            transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+        //        }
+        //        else
+        //        {
+        //            transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+        //        }
+        //    }
+        //}
+        //// if cube's rotation is between -135 and 135, align cube to 180 degrees
+        //else if (transform.rotation.eulerAngles.z >= -135 && transform.rotation.eulerAngles.z < 135)
+        //{
+        //    transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
+        //    if (!(transform.rotation.eulerAngles.z != 180))
+        //    {
+        //        if (transform.rotation.eulerAngles.z < 180)
+        //        {
+        //            transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+        //        }
+        //        else
+        //        {
+        //            transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+        //        }
+        //    }
+        //}
+        //// if cube's rotation is between 135 and 45, align cube to 90 degrees
+        //else if (transform.rotation.eulerAngles.z >= 135 && transform.rotation.eulerAngles.z < 45)
+        //{
+        //    transform.rotation = Quaternion.Euler(0f, 0f, (float)Math.Round(transform.rotation.eulerAngles.z));
+        //    if (!(transform.rotation.eulerAngles.z != 90))
+        //    {
+        //        if (transform.rotation.eulerAngles.z < 90)
+        //        {
+        //            transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+        //        }
+        //        else
+        //        {
+        //            transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+        //        }
+        //    }
+        //}
         // the rotation follows as such...
         // always rotates clockwise, starts at 0. 
         // decreases down to -180
@@ -149,7 +155,6 @@ public class PCube : MonoBehaviour
      * 180      225         270
      * 270      315         360
     */
-
 
     // try to make sure that all these rotational gimmicks do not interfere with the player's ability to jump, since I have been experiencing
     // issues where the player's maximum jump height ends up being inconsistent when the jump buttion is held down.
