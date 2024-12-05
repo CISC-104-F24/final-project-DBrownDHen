@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ObjectMover : MonoBehaviour
 {
+    public float moveSpeed = 3f;
+    public GameObject CubeHitbox;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +27,18 @@ public class ObjectMover : MonoBehaviour
         // make a boolean variable that scripts can use to determine if the cube has crashed.
         // this will be used to stop movement of level objects (in this script), and prompt the
         // user to restart the level, and possibly other things.
+
+        if (!(CubeHitbox.GetComponent<PHitbox>().isAlive))
+        {
+            if (moveSpeed <= 0.0f)
+            {
+                moveSpeed = 0.0f;
+            }
+            else
+            {
+                moveSpeed -= 3.0f * Time.deltaTime;
+            }
+        }
+        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
     }
 }
