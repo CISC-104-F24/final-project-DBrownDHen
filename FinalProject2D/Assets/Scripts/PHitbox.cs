@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PHitbox : MonoBehaviour
 {
-    public float jumpPower = 3f;
+    public float jumpPower = 3.5f;
     Rigidbody2D rb;
     public bool isInAir;
 
@@ -48,7 +48,6 @@ public class PHitbox : MonoBehaviour
             isAlive = false;
         }
     }
-
     /* TODO
      * Separate the player's hitbox into two different colliders,
      * one for blocks that the cube can land on,

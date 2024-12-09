@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectMover : MonoBehaviour
 {
-    public float moveSpeed = 3f;
+    public float moveSpeed = 5f;
     public GameObject CubeHitbox;
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class ObjectMover : MonoBehaviour
             }
             else
             {
-                moveSpeed -= 3.0f * Time.deltaTime;
+                moveSpeed -= 5.0f * Time.deltaTime;
             }
         }
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;

@@ -23,7 +23,7 @@ public class PCube : MonoBehaviour
 
         if (CubeHitbox.GetComponent<PHitbox>().isAlive)
         {
-            Debug.Log(transform.rotation.eulerAngles.z);
+            //Debug.Log(transform.rotation.eulerAngles.z);
 
             transform.position = CubeHitbox.transform.position;
             if (CubeHitbox.GetComponent<PHitbox>().isInAir)
