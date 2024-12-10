@@ -10,6 +10,8 @@ public class PHitbox : MonoBehaviour
 
     public bool isAlive = true;
 
+    private float testval;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,12 @@ public class PHitbox : MonoBehaviour
             rb.AddForce(new Vector2(0f, 1.0f * jumpPower), ForceMode2D.Impulse);
             isInAir = true;
         }
+
+        //if (rb.velocity.y > testval)
+        //{
+        //    testval = rb.velocity.y;
+        //}
+        //Debug.Log(testval);
     }
 
     private void OnCollisionStay2D(Collision2D collision)

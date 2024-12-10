@@ -17,7 +17,7 @@ public class TestScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ParentCube.transform.position.y);
+        //Debug.Log(ParentCube.transform.position.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

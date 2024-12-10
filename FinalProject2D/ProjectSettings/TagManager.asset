@@ -8,6 +8,8 @@ TagManager:
   - Crasher
   - LevelObject
   - Collider
+  - PlayerObjHitbox
+  - Important
   layers:
   - Default
   - TransparentFX

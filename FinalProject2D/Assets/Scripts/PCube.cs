@@ -28,7 +28,7 @@ public class PCube : MonoBehaviour
             transform.position = CubeHitbox.transform.position;
             if (CubeHitbox.GetComponent<PHitbox>().isInAir)
             {
-                transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+                transform.eulerAngles += new Vector3(0f, 0f, -0.4f);
                 // rotates the cube while it's in the air, like in Geometry Dash
             }
             else
@@ -39,14 +39,14 @@ public class PCube : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(KeyCode.E))
-            {
-                transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
-            }
-            if (Input.GetKey(KeyCode.Q))
-            {
-                transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
-            }
+            //if (Input.GetKey(KeyCode.E))
+            //{
+            //    transform.eulerAngles += new Vector3(0f, 0f, -0.5f);
+            //}
+            //if (Input.GetKey(KeyCode.Q))
+            //{
+            //    transform.eulerAngles += new Vector3(0f, 0f, 0.5f);
+            //}
         }
         else
         {
