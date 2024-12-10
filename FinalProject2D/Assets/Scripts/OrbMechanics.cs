@@ -10,6 +10,8 @@ public class OrbMechanics : MonoBehaviour
     public float jumpBoost = 3.5f;
     public GameObject BoostedObject;
     private Rigidbody2D borb;
+    public float boostTimer;
+    public bool spacePressed;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +23,26 @@ public class OrbMechanics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && hasBeenUsed == false && isColliding == true)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            boostTimer = 0.5f;
+        }
+
+        if (!(boostTimer <= 0))
+        {
+            spacePressed = true;
+            boostTimer -= 1.0f * Time.deltaTime;
+        }
+        else
+        {
+            spacePressed = false;
+        }
+
+        if (spacePressed == true && hasBeenUsed == false && isColliding == true)
         {
             hasBeenUsed = true;
+            boostTimer = 0.0f;
+            spacePressed = false;
             borb.velocity = new Vector3(0f, (jumpBoost * 2.0f) - 0.2943f, 0f);
             //borb.AddForce(new Vector2(0f, 1.0f * jumpBoost), ForceMode2D.Impulse);
         }

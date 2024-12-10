@@ -7,12 +7,15 @@ public class ColorCycle : MonoBehaviour
     public float red = 0.0f;
     public float green = 0.0f;
     public float blue = 0.0f;
+    public float cycleRate = 0.25f;
     public bool colorsCycled = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        red = Random.Range(0.0f, 1.0f);
+        blue = Random.Range(0.0f, 1.0f);
+        green = Random.Range(0.0f, 1.0f);
     }
 
     // Update is called once per frame
@@ -22,19 +25,19 @@ public class ColorCycle : MonoBehaviour
         {
             if (!(red >= 1.0f))
             {
-                red += 0.25f * Time.deltaTime;
+                red += cycleRate * Time.deltaTime;
             }
             else
             {
                 if (!(green >= 1.0f))
                 {
-                    green += 0.25f * Time.deltaTime;
+                    green += cycleRate * Time.deltaTime;
                 }
                 else
                 {
                     if (!(blue >= 1.0f))
                     {
-                        blue += 0.25f * Time.deltaTime;
+                        blue += cycleRate * Time.deltaTime;
                     }
                 }
             }
@@ -47,19 +50,19 @@ public class ColorCycle : MonoBehaviour
         {
             if (!(red <= 0.0f))
             {
-                red -= 0.25f * Time.deltaTime;
+                red -= cycleRate * Time.deltaTime;
             }
             else
             {
                 if (!(green <= 0.0f))
                 {
-                    green -= 0.25f * Time.deltaTime;
+                    green -= cycleRate * Time.deltaTime;
                 }
                 else
                 {
                     if (!(blue <= 0.0f))
                     {
-                        blue -= 0.25f * Time.deltaTime;
+                        blue -= cycleRate * Time.deltaTime;
                     }
                 }
             }

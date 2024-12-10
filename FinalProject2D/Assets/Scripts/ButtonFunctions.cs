@@ -31,4 +31,9 @@ public class ButtonFunctions : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void PlayLevel(int levelNum)
+    {
+        SceneManager.LoadScene(levelNum);
+    }
 }

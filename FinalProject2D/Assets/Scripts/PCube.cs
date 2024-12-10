@@ -28,7 +28,7 @@ public class PCube : MonoBehaviour
             transform.position = CubeHitbox.transform.position;
             if (CubeHitbox.GetComponent<PHitbox>().isInAir)
             {
-                transform.eulerAngles += new Vector3(0f, 0f, -0.4f);
+                transform.eulerAngles += new Vector3(0f, 0f, -120.0f * Time.deltaTime);
                 // rotates the cube while it's in the air, like in Geometry Dash
             }
             else

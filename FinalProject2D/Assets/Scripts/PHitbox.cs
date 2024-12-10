@@ -23,7 +23,8 @@ public class PHitbox : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && isInAir == false)
         {
-            rb.AddForce(new Vector2(0f, 1.0f * jumpPower), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(0f, 1.0f * jumpPower), ForceMode2D.Impulse);
+            rb.velocity = new Vector3(0f, (jumpPower * 2.0f) - 0.2943f, 0f);
             isInAir = true;
         }
 
