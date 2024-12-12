@@ -25,7 +25,7 @@ public class OrbMechanics : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            boostTimer = 0.5f;
+            boostTimer = 0.25f;
         }
 
         if (!(boostTimer <= 0))

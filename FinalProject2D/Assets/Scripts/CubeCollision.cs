@@ -24,7 +24,7 @@ public class TestScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerHitbox"))
         {
-            if (ParentCube.transform.position.y >= collision.gameObject.transform.position.y - 1)
+            if (ParentCube.transform.position.y >= collision.gameObject.transform.position.y - 0.5f)
             {
                 collidore.isTrigger = true;
             }
